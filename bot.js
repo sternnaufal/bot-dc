@@ -3,6 +3,7 @@
 const { ask } = require("./ai.js"); //import the "ask" function from the "ai.js" file
 const { Client, Events, GatewayIntentBits, ActivityType, Message} = require('discord.js'); //v14.6.0
 const token = process.env.token;
+const public_id = process.env.public_id;
 
 // Create a new client instance
 const client = new Client({
@@ -12,6 +13,8 @@ const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent]
 });
+app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
+  const interaction = req.body;}
 client.on('ready' , () =>{
   console.log('Bot Online');
   client.user.setStatus('online');
@@ -47,6 +50,7 @@ client.on(Events.MessageCreate, async message => {
     message.reply(answer);
   }
 });
+}
 
 // Log in to Discord with your client's token
 client.login(token);
