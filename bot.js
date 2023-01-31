@@ -13,9 +13,6 @@ const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent]
 });
-app.post('/interactions', verifyKeyMiddleware(public_id), async (req, res) => {
-  const interaction = req.body;
-});
 client.on('ready' , () =>{
   console.log('Bot Online');
   client.user.setStatus('online');
