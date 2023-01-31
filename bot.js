@@ -2,7 +2,7 @@
 
 const { ask } = require("./ai.js"); //import the "ask" function from the "ai.js" file
 const { Client, Events, GatewayIntentBits, ActivityType, Message} = require('discord.js'); //v14.6.0
-const token = "MTA2OTY1MzQzMjE0ODk2NzUwNA.G1gW-K.5PZSvaeCmcQB7Bf5a5pu4bKuu5belElbajJ0Tw";
+const token = process.env.token;
 
 // Create a new client instance
 const client = new Client({
