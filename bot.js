@@ -48,7 +48,7 @@ client.on(Events.MessageCreate, async message => {
     message.reply(answer);
   }
 });
-}
+
 
 // Log in to Discord with your client's token
 client.login(token);
